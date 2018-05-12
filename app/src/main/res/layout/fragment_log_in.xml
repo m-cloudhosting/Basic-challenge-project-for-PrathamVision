@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout android:id="@+id/snackview"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".views.fragments.LogInFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="60dp"
+        android:layout_height="?attr/actionBarSize"
+        android:padding="14dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:contentDescription="@string/app_name"/>
+
+    <RelativeLayout
+        android:id="@+id/loading_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/tab_title_dark"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_above="@+id/loadingindicator"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:text="Please Wait..."/>
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/loadingindicator"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:visibility="visible"
+            app:indicator="LineScaleParty"
+            app:indicator_color="#F53700" />
+    </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_width="150sp"
+                    android:layout_height="150sp"
+                    android:contentDescription="@string/app_name"/>
+
+                <LinearLayout
+                    android:id="@+id/User_input_linear_layout"
+                    android:layout_below="@+id/logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/input_layout_first_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextLabe2">
+
+                        <EditText
+                            android:id="@+id/et_reg_fname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/firstname"
+                            android:inputType="text"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp"
+                            android:drawableStart="@drawable/ic_account_circle_black_24dp"
+                            android:drawablePadding="5dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="0dp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/input_layout_last_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextLabe2">
+
+                        <EditText
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/password"
+                            android:inputType="textPassword"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp"
+                            android:paddingEnd="0dp"
+                            android:drawableStart="@drawable/ic_lock_black_24dp"
+                            android:drawablePadding="5dp"
+                            android:paddingStart="10dp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/user_button_login"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:text="@string/login"
+                        android:background="@color/colorPrimaryDark"
+                        android:textColor="@android:color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Social_login_heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:weightSum="100"
+                    android:layout_margin="15dp"
+                    android:layout_below="@+id/User_input_linear_layout">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="40"
+                        android:layout_gravity="center"
+                        android:background="@android:color/white"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="18"
+                        android:text="@string/or"
+                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center"
+                        android:background="@drawable/rounded_or_button"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="40"
+                        android:layout_gravity="center"
+                        android:background="@android:color/white"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Social_login_heading"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp">
+
+                    <TextView
+                        android:id="@+id/signUp_using_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Login using "
+                        android:textSize="18sp"
+                        android:layout_toStartOf="@+id/googleSinInButton"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:textColor="@android:color/white"/>
+
+                    <ImageView
+                        android:id="@+id/googleSinInButton"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/google_icon"
+                        android:layout_centerInParent="true"
+                        android:contentDescription="@string/app_name"/>
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+</android.support.design.widget.CoordinatorLayout>
